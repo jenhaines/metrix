@@ -1,2 +1,23 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="jumbotron">
+  <h1 class="logo">meTrix</h1>
+  <p>meTrix are not for kids...</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Share</h2>
+    Your "version" of History with the world!
+  </div>
+  <div class="col-md-4">
+    <h2>Edit</h2>
+   Another Wiki to "improve" things!
+  </div>
+  <div class="col-md-4">
+    <h2>Delete</h2>
+    <p>A Wiki just because you feel like it!</p>
+  </div>
+</div>
