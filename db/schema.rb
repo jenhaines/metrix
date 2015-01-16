@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116055457) do
+ActiveRecord::Schema.define(version: 20150116070103) do
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apps", ["user_id"], name: "index_apps_on_user_id"
+
+  create_table "events", force: true do |t|
+    t.string   "ip_address"
+    t.string   "webid"
+    t.string   "action"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["app_id"], name: "index_events_on_app_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
