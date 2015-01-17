@@ -1,35 +1,33 @@
 require 'faker'
  
  # Create events
+
+  5.times do
+   User.create(
+     name:     Faker::Name.name,
+     email:    Faker::Internet.email,
+     password: "helloworld",
+   )
+ end
+ users = User.all
+
+10.times do
+  App.create(
+    user: users.sample,
+    name: Faker::Lorem.word,
+    desc: Faker::Lorem.sentence
+    )
+end
+apps = App.all
+
 50.times do 
   Event.create(
+    app: apps.sample,
     action: "page view",
     ip_address: Faker::Internet.ip_v4_address
     )
 end
-
-  events = Event.all
-  puts events.class
-
-  10.times do
-    App.create(
-      events: events.sample,
-      name: Faker::Lorem.word,
-      desc: Faker::Lorem.sentence
-      )
-  end
-
-    apps = App.all
-
- 5.times do
-   user = User.create(
-     name:     Faker::Name.name,
-     email:    Faker::Internet.email,
-     password: "helloworld",
-     # password: Faker::Lorem.characters(10)
-     app: apps.sample
-   )
- end
+events = Event.all
 
 #Create an admin user
 admin = User.create(

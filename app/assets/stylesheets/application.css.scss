@@ -14,3 +14,14 @@
  *= require_self
  */
  @import "bootstrap";
+
+ body {
+  background: url(backpic.png);
+ }
+
+ .container {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 20px 40px;
+  // margin: 10px;
+ }

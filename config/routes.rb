@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:update, :show, :index]
 
+  resources :apps, only: [:create, :index, :show, :update]
+
+
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
