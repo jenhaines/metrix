@@ -21,11 +21,12 @@ end
 apps = App.all
 
 50.times do 
-  Event.create(
+  event= Event.create(
     app: apps.sample,
     action: "page view",
     ip_address: Faker::Internet.ip_v4_address,
-    created_at: Faker::Date.backward(120)
+    created_at: Faker::Date.backward(120),
+    created_on: Faker::Date.backward(120).to_date
     )
 end
 events = Event.all

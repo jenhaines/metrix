@@ -16,12 +16,12 @@
  @import "bootstrap";
 
  body {
-  background: url(backpic.png);
+  background: url(https://s3-us-west-1.amazonaws.com/mystorage-jh/backpic.png);
  }
 
  .container {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 2px solid #CCC;
   padding: 20px 40px;
   // margin: 10px;
  }
