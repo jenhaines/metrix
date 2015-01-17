@@ -19,6 +19,11 @@ group :test, :development do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
+group :production do
+   gem 'pg'
+   gem 'rails_12factor'
+end
+
 # Front End Framework
 gem 'bootstrap-sass', '~> 3.1.1'
 

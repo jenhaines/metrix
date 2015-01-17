@@ -24,7 +24,8 @@ apps = App.all
   Event.create(
     app: apps.sample,
     action: "page view",
-    ip_address: Faker::Internet.ip_v4_address
+    ip_address: Faker::Internet.ip_v4_address,
+    created_at: Faker::Date.backward(120)
     )
 end
 events = Event.all
