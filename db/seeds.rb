@@ -20,10 +20,12 @@ require 'faker'
 end
 apps = App.all
 
-50.times do 
+actions = ["home page", "about page", "advert", "download app", "view pdf"]
+
+200.times do 
   event= Event.create(
     app: apps.sample,
-    action: "page view",
+    action: actions[rand(5)],
     ip_address: Faker::Internet.ip_v4_address,
     created_at: Faker::Date.backward(120),
     created_on: Faker::Date.backward(120).to_date
