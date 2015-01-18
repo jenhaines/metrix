@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20150118013000) do
 
   create_table "events", force: true do |t|
     t.string   "ip_address"
+    t.string   "name"
+    t.string   "action_1"
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "created_on"
-    t.string   "action_1"
-    t.string   "name"
     t.string   "action_2"
   end
 
