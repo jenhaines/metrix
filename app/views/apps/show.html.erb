@@ -7,7 +7,7 @@
     <%= line_chart @events.group(:created_on).count discrete: true %>
 </div>
 <div class="row">
-  <%= pie_chart @events.group(:action).count %>
+  <%= pie_chart @events.group(:action_1).count %>
 
 </div>
 

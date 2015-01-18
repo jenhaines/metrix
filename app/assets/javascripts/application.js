@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+
+function send_event(_bm_event){
+
+  var _bm_request = new $.ajax({
+    url: "http://metrix.dev/api/events.json",
+    method: "post",
+    data: {event: _bm_event}
+  })
+}

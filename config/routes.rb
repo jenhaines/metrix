@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :apps, only: [:create, :index, :show, :update]
 
+  namespace :api do
+    resources :events, only: [:create]
+  end
+
 
   get 'about' => 'welcome#about'
 

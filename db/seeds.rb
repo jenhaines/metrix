@@ -25,7 +25,9 @@ actions = ["home page", "about page", "advert", "download app", "view pdf"]
 200.times do 
   event= Event.create(
     app: apps.sample,
-    action: actions[rand(5)],
+    name: Faker::Internet.domain_name,
+    action_1: actions[rand(5)],
+    action_2: actions[rand(5)],
     ip_address: Faker::Internet.ip_v4_address,
     created_at: Faker::Date.backward(120),
     created_on: Faker::Date.backward(120).to_date
