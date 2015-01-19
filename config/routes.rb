@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :apps, only: [:create, :index, :show, :update]
 
   namespace :api do
-    resources :events, only: [:create]
+    resources :events, only: [:create, :index, :show]
   end
 
 

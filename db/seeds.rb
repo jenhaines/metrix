@@ -14,7 +14,7 @@ require 'faker'
 10.times do
   App.create(
     user: users.sample,
-    name: Faker::Lorem.word,
+    name: Faker::Internet.domain_name,
     desc: Faker::Lorem.sentence
     )
 end
@@ -25,7 +25,7 @@ actions = ["home page", "about page", "advert", "download app", "view pdf"]
 200.times do 
   event= Event.create(
     app: apps.sample,
-    name: Faker::Internet.domain_name,
+    name: Faker::Lorem.word,
     action_1: actions[rand(5)],
     action_2: actions[rand(5)],
     ip_address: Faker::Internet.ip_v4_address,

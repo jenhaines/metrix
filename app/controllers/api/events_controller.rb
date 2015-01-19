@@ -4,7 +4,10 @@ class Api::EventsController < ApplicationController
   respond_to :json
 
     def show
-      respond_with Event.find(params[:id])
+      render json: Event.find(params[:id])
+    end
+    def index
+      render json: Event.all
     end
 
     def create
