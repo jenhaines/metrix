@@ -15,6 +15,7 @@
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "My Apps", apps_path if current_user %></li>
+            <li><%= link_to "New App", new_app_path if current_user %></li>
           <div class="pull-right user-info">
             <% if current_user %>
               Hello <%= link_to current_user.name, edit_user_registration_path %>!&nbsp

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:update, :show, :index]
 
-  resources :apps, only: [:create, :index, :show, :update]
+  resources :apps, only: [:new, :create, :index, :show, :update]
 
   namespace :api do
     resources :events, only: [:create, :index, :show]

@@ -36,12 +36,15 @@ Put this Javascript function in your code so your objects can access it globally
 
 `action_2` *Second action variable that can be be sent to Metrix*
 
-#####Sample code of a link click being sent Metrix
+#####Sample code of an onclick Javascript call
 
-```js<a href="#" onclick="send_event({app_id: 42, name: 'example.com', action_1: 'homepage', action_2: 'mailto link clicked'})">click me</a>
+```js 
+onclick="send_event({app_id: 42, name: 'example.com', action_1: 'homepage', action_2: 'mailto link clicked'})"
 ```
 
-That's it. From that point your events are being sent to Metrix where it can view in many different charts and graphs to fit your needs.
+That's it.
+
+Your events are then being sent to Metrix where it can be viewed in many different charts and graphs to fit your needs.
 
 [Heroku preview](https://metrix-jh.herokuapp.com)
 

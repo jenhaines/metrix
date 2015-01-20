@@ -1,4 +1,57 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<div class="row">
+<div class="col-md-12">
 
-<a href="#" onclick="send_event({app_id: -1, name: 'sharks', action_1: 'Sucks', action_2: 'Bad Food'})">click me</a>
+<article class="markdown-body">
+</br>
+<h4>A general purpose analytics service that tracks events on your website</h4>
+
+<ul>
+<li>a client-side Javascript snippet that allows a user track events on their website* </li>
+<li>a server-side API that captures and saves those events to a database* </li>
+<li>a Rails application that displays the captured event data for a user.</li>
+</ul>
+
+<h5>
+<a id="user-content-how-to-setup-metrix-to-track-events-on-a-website" class="anchor" href="#how-to-setup-metrix-to-track-events-on-a-website" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to setup Metrix to track events on a website</h5>
+
+<ul>
+<li>Sign up for a free account at the Metrix website.</li>
+<li>Create a profile for the application.</li>
+<li>Insert the generated Javascript code in your website</li>
+</ul>
+
+<h5>
+<a id="user-content-javascript-code-needed-to-track-events-with-metrix" class="anchor" href="#javascript-code-needed-to-track-events-with-metrix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascript code needed to track events with Metrix</h5>
+
+<p>Put this Javascript function in your code so your objects can access it globally.</p>
+
+<div class="highlight highlight-js"><pre>  <span class="pl-st">function</span> <span class="pl-en">send_event</span>(<span class="pl-vpf">_bm_event</span>){
+    <span class="pl-s">var</span> _bm_request <span class="pl-k">=</span> <span class="pl-k">new</span> $.ajax({
+      url<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>https://metrix-jh.herokuapp.com/api/events.json<span class="pl-pds">"</span></span>,
+      method<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>post<span class="pl-pds">"</span></span>,
+      data<span class="pl-k">:</span> {<span class="pl-s3">event</span><span class="pl-k">:</span> _bm_event}
+    })
+  }</pre></div>
+
+<p><code>_bm_event</code> takes four variables.</p>
+
+<p><code>app_id:</code> <em>unique id for each app (WILL NOT WORK WITHOUT IT)</em></p>
+
+<p><code>name:</code> <em>Name you choose for the event</em></p>
+
+<p><code>action_1:</code> <em>One of two action variables that can be sent to Metrix</em></p>
+
+<p><code>action_2</code> <em>Second action variable that can be be sent to Metrix</em></p>
+
+<h5>
+<a id="user-content-sample-code-of-an-onclick-javascript-call" class="anchor" href="#sample-code-of-an-onclick-javascript-call" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample code of an onclick Javascript call</h5>
+
+<div class="highlight highlight-js"><pre>onclick<span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>send_event({app_id: 42, name: 'example.com', action_1: 'homepage', action_2: 'mailto link clicked'})<span class="pl-pds">"</span></span></pre></div>
+
+<p>That's it.</p>
+
+<p>Your events are then being sent to Metrix where it can be viewed in many different charts and graphs to fit your needs.</p>
+</br>
+</article>
+</div>
+</div>

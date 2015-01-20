@@ -10,6 +10,37 @@
   <%= pie_chart @events.group(:action_1).count %>
 
 </div>
-
+<div class="row">
+  <div class="col-md-12">
+  <h3><%= "Your App ID is #{@app.id}"%></h3>
+  <p>Paste this function in you app.</p>
+  <pre>function send_event(_bm_event){
+    var _bm_request = new $.ajax({
+      url: "https://metrix-jh.herokuapp.com/api/events.json",
+      method: "post",
+      data: {event: _bm_event}
+    })
+  }</pre>
+  <p>Sample code below for calling this app</p>
+    <pre>
+    send_event({app_id: <%= @app.id %>, name: 'info.dev', action_1: 'about', action_2: 'page view'})
+    </pre>
+    </div>
+    </div>
+<div class="row">
+<div class="col-md-12">
+<h3>Your Events</h3>
+<table class="table table-striped">
+<tr>
+  <td><b>Event Name</b></td>
+  <td><b>Action 1</b></td>
+  <td><b>Action 2</b></td>
+</tr>
+  <tr>
+  <%= render @app.events %>
+  </tr>
+</table>  
+</div>
+</div>
 </div>
 </div>
