@@ -19,7 +19,7 @@
 function send_event(_bm_event){
 
   var _bm_request = new $.ajax({
-    url: "https://metrix-jh.herokuapp.com/api/events.json",
+    url: "http://localhost:3000/api/events.json",
     method: "post",
     data: {event: _bm_event}
   })

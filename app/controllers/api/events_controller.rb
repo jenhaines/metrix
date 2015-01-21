@@ -13,6 +13,7 @@ class Api::EventsController < ApplicationController
     def create
       if App.exists?(event_params[:app_id])
         event = Event.new(event_params)
+        event.ip_address = request.remote_ip
         event.save
       end
       head 200
@@ -21,6 +22,6 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-      params.require(:event).permit(:app_id, :name, :action_1, :action_2)
+      params.require(:event).permit(:app_id, :name, :action_1, :action_2, :ip_address)
   end
 end
