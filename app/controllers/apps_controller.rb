@@ -2,15 +2,18 @@ class AppsController < ApplicationController
 
   def index
     @apps = current_user.apps
+    authorize @apps
   end
 
   def show
     @app = App.find params[:id]
+    authorize @app
     @events = Event.all
   end
 
   def new
     @app = App.new
+    authorize @app
   end
 
   def create

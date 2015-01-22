@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :apps
 
   validates :name, presence: true
+
+  def admin?
+    role == 'admin'
+  end
+
 end

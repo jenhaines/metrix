@@ -4,7 +4,9 @@ class Api::EventsController < ApplicationController
   respond_to :json
 
     def show
-      render json: Event.find(params[:id])
+      @event = Event.find(params[:id])
+      authorize @event
+      render json: @event
     end
     def index
       render json: Event.all

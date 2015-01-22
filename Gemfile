@@ -32,7 +32,9 @@ gem 'pry'
 # Seed Data Generator
 gem 'faker'
 
+#Authentication and Authorization
 gem 'devise'
+gem 'pundit'
 
 #Charting Json
 gem 'chartkick'
