@@ -35,6 +35,7 @@ gem 'faker'
 #Authentication and Authorization
 gem 'devise'
 gem 'pundit'
+gem 'figaro', '1.0'
 
 #Charting Json
 gem 'chartkick'
