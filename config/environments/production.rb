@@ -75,6 +75,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-    # https://metrixjh.herokuapp.com
-   config.action_mailer.default_url_options = { host: 'metrixjh.herokuapp.com' }
+    # https://metrix-jh.herokuapp.com
+   config.action_mailer.default_url_options = { host: 'metrix-jh.herokuapp.com' }
 end
