@@ -1,13 +1,16 @@
 require 'faker'
- 
- # Create events
+
+#Create Users
 
   5.times do
-   User.create(
+   user = User.new(
      name:     Faker::Name.name,
      email:    Faker::Internet.email,
      password: "helloworld",
+     role: "standard"
    )
+     user.skip_confirmation!
+     user.save
  end
  users = User.all
 
@@ -36,11 +39,14 @@ end
 events = Event.all
 
 #Create an admin user
-admin = User.create(
+admin = User.new(
   name:     'Admin User',
   email:    'admin@example.com',
-  password: 'helloworld'
+  password: 'helloworld',
+  role: 'admin'
 )
+  admin.skip_confirmation!
+  admin.save
 
  puts "Seed finished"
  puts "#{User.count} users created"
