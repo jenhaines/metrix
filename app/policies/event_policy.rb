@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
-  # def index?
-  #   true
-  # end
+  def index?
+    record.user == user
+  end
 
 end

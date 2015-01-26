@@ -9,7 +9,9 @@ class Api::EventsController < ApplicationController
       render json: @event
     end
     def index
-      render json: Event.all
+      @events = Event.all
+      authorize @events
+      render json: @events
     end
 
     def create
