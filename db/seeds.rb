@@ -25,7 +25,7 @@ apps = App.all
 
 actions = ["home page", "about page", "advert", "download app", "view pdf"]
 
-200.times do 
+500.times do 
   event= Event.create(
     app: apps.sample,
     name: Faker::Lorem.word,

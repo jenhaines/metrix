@@ -1,8 +1,9 @@
 class AppsController < ApplicationController
 
+  before_action :authenticate_user!
+  
   def index
-    @apps = current_user.apps
-    authorize @apps
+    @apps = policy_scope(App.all)
   end
 
   def show

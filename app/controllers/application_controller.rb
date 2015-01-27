@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  rescue_from Pundit::NotAuthorizedError do |exception|
-     redirect_to root_url, alert: exception.message
-   end
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
     # This is our new function that comes before Devise's one
   # before_filter :authenticate_user_from_token!
@@ -31,6 +29,11 @@ class ApplicationController < ActionController::Base
       # sign in token, you can simply remove store: false.
       sign_in user
     end
+  end
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(request.referrer || root_path)
   end
 
  

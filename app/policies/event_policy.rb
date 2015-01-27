@@ -1,7 +1,5 @@
 class EventPolicy < ApplicationPolicy
-  def index?
-    
-  end
+
 
   class Scope < Scope
    def resolve
