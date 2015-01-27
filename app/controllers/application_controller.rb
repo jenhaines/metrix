@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
    end
 
     # This is our new function that comes before Devise's one
-  before_filter :authenticate_user_from_token!
+  # before_filter :authenticate_user_from_token!
   # This is Devise's authentication
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
  
   private
   
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
       # actually stored in the session and a token is needed
       # for every request. If you want the token to work as a
       # sign in token, you can simply remove store: false.
-      sign_in user, store: false
+      sign_in user
     end
   end
 

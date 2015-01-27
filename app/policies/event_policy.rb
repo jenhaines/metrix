@@ -1,6 +1,13 @@
 class EventPolicy < ApplicationPolicy
   def index?
-    record.user == user
+    
   end
 
+  class Scope < Scope
+   def resolve
+     if user.present? && user.admin?
+       scope.all 
+     end
+   end
+  end
 end

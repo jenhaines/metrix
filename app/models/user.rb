@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :apps
+  
+    # You likely have this before callback set up for the token.
+  before_save :ensure_authentication_token
 
   validates :name, presence: true
 
-    # You likely have this before callback set up for the token.
-  before_save :ensure_authentication_token
  
   def ensure_authentication_token
     if authentication_token.blank?
