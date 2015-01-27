@@ -9,7 +9,7 @@ class AppsController < ApplicationController
   def show
     @app = App.find params[:id]
     authorize @app
-    @events = Event.all
+    @events = @app.events
   end
 
   def new

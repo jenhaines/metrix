@@ -2,4 +2,7 @@
 
 <p>You can confirm your account email through the link below:</p>
 
+<p>Your API token is <%= @resource.authentication_token %></p>
+<p>PLEASE keep this in a safe place as it is needed to use the system.</p>
+
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

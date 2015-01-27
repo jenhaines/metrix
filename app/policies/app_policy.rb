@@ -8,7 +8,7 @@ class AppPolicy < ApplicationPolicy
     def resolve
       if user.present? && user.role == 'admin'
         scope.all 
-      elsif user.present?
+      else
         scope = user.apps
       end
     end

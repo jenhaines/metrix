@@ -16,7 +16,7 @@
   <p>Paste this function in you app.</p>
   <pre>function send_event(_bm_event){
     var _bm_request = new $.ajax({
-      url: "https://metrix-jh.herokuapp.com/api/events.json",
+      url: "https://metrix-jh.herokuapp.com/api/events.json?token=<%= current_user.authentication_token %>",
       method: "post",
       data: {event: _bm_event}
     })
@@ -37,7 +37,7 @@
   <td><b>Action 2</b></td>
 </tr>
   <tr>
-  <%= render @app.events %>
+  <%= render @events %>
   </tr>
 </table>  
 </div>
