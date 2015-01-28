@@ -46,5 +46,5 @@ That's it.
 
 Your events are then being sent to Metrix where it can be viewed in many different charts and graphs to fit your needs.
 
-[Heroku preview](https://metrixjh.herokuapp.com)
+[Heroku preview](https://metrix-jh.herokuapp.com)
 
