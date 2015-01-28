@@ -4,9 +4,10 @@
   <tr>
     <td><b>ID</b></td>
     <td><b>Name</b></td>
-    <td><b>Description</b></td>  
+    <td><b>Description</b></td>
+    <td><b>Events</b></td>  
   </tr>
-    <%= render @apps %>
+    <%= render @apps.by_events %>
   </table>
   </div>
 </div>
