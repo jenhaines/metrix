@@ -22,6 +22,8 @@ group :production do
    gem 'rails_12factor'
 end
 
+gem 'newrelic_rpm'
+
 # Front End Framework
 gem 'bootstrap-sass', '~> 3.1.1'
 
