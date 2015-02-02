@@ -5,7 +5,7 @@ class App < ActiveRecord::Base
   # default_scope {joins(:events).count}
 
   def self.by_events
-    joins(:events).group('apps.id').count
+    order('events_count DESC')
   end
 
 
